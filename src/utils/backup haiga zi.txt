@@ -1,0 +1,438 @@
+import os, json, hashlib
+import numpy as np
+import torch, torchaudio
+
+# ================== CONFIG (must match recognizer) ==================
+SR = 22050
+N_FFT = 2048
+HOP = 512
+PEAK_NEIGHBORHOOD = 20      # local-max window (freq x time)
+AMP_DB_MIN = -35            # ignore quiet pixels (raise to -30/-25 to be stricter)
+FAN_VALUE = 15              # pairs per peak
+MIN_TDELTA = 1              # min time delta (frames)
+MAX_TDELTA = 200            # max time delta (frames)
+DATASET_DIR = "dataset"
+OUT_DIR = "constellation_index"
+# ====================================================================
+
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+print(f"🚀 Using device: {device}")
+
+# ---- warm up CUDA once to reduce first-call latency ----
+if device.type == "cuda":
+    _ = torch.randn(1, device=device)
+
+# ---- Prebuild reusable GPU transforms ----
+spec_tf = torchaudio.transforms.Spectrogram(n_fft=N_FFT, hop_length=HOP, power=None).to(device)
+amp2db_tf = torchaudio.transforms.AmplitudeToDB(top_db=80).to(device)
+
+def spectrogram_db(path):
+    wav, sr = torchaudio.load(path)  # [C, T] on CPU
+    if sr != SR:
+        wav = torchaudio.functional.resample(wav, sr, SR)
+    wav = torch.mean(wav, dim=0, keepdim=True).to(device)   # mono [1,T] on GPU
+    spec = spec_tf(wav)                                     # complex spec
+    mag = torch.abs(spec).squeeze(0)                        # [F,T]
+    db  = amp2db_tf(mag)
+    return db.detach().cpu().numpy()                        # numpy [F,T]
+
+def peak_coords(S_db, neighborhood=PEAK_NEIGHBORHOOD, amp_min=AMP_DB_MIN):
+    from scipy.ndimage import maximum_filter
+    local_max = maximum_filter(S_db, size=neighborhood) == S_db
+    mask = S_db > amp_min
+    peaks = np.argwhere(local_max & mask)
+    # sort by time index for stable pairing
+    if len(peaks):
+        peaks = peaks[np.argsort(peaks[:, 1])]
+    return peaks  # columns: [freq_idx, time_idx]
+
+def hashes_from_peaks(peaks):
+    H = []
+    L = len(peaks)
+    hop_sec = HOP / SR
+    for i in range(L):
+        f1, t1 = peaks[i]
+        for j in range(1, FAN_VALUE):
+            if i + j >= L: break
+            f2, t2 = peaks[i + j]
+            dt = t2 - t1
+            if MIN_TDELTA <= dt <= MAX_TDELTA:
+                raw = f"{int(f1)}|{int(f2)}|{int(dt)}"
+                h = hashlib.sha1(raw.encode()).hexdigest()[:20]
+                H.append((h, t1 * hop_sec))  # store time in seconds
+    return H
+
+def build_index(dataset_dir=DATASET_DIR, out_dir=OUT_DIR):
+    os.makedirs(out_dir, exist_ok=True)
+    inv = {}   # inverted index: hash -> list of [song_id, t_sec]
+    meta = []  # [{id, artist, title}...]
+    sid = 0
+
+    for artist in os.listdir(dataset_dir):
+        adir = os.path.join(dataset_dir, artist)
+        if not os.path.isdir(adir): continue
+        for fname in os.listdir(adir):
+            if not fname.lower().endswith(".wav"): continue
+            fpath = os.path.join(adir, fname)
+            title = os.path.splitext(fname)[0]
+            song_id = sid; sid += 1
+            print(f"🎵 Indexing: {artist} - {title}")
+
+            S_db = spectrogram_db(fpath)
+            peaks = peak_coords(S_db)
+            if peaks.size == 0:
+                print(f"… skipped (no peaks): {artist} - {title}")
+                continue
+            H = hashes_from_peaks(peaks)
+
+            for h, t in H:
+                inv.setdefault(h, []).append([song_id, t])
+
+            meta.append({"id": song_id, "artist": artist, "title": title})
+
+    with open(os.path.join(out_dir, "inverted_index.json"), "w", encoding="utf-8") as f:
+        json.dump(inv, f)
+    with open(os.path.join(out_dir, "songs_meta.json"), "w", encoding="utf-8") as f:
+        json.dump(meta, f, ensure_ascii=False, indent=2)
+
+    print(f"\n✅ Saved index → {out_dir}/inverted_index.json")
+    print(f"✅ Saved meta  → {out_dir}/songs_meta.json")
+
+if __name__ == "__main__":
+    build_index()
+
+index_constellation.py
+-----
+import os, json, hashlib, time
+import numpy as np
+import torch, torchaudio
+import sounddevice as sd
+from scipy.io.wavfile import write
+from collections import defaultdict, Counter
+
+# ================== CONFIG ==================
+SR = 22050
+N_FFT = 2048
+HOP = 512
+PEAK_NEIGHBORHOOD = 20
+AMP_DB_MIN = -35
+FAN_VALUE = 15
+MIN_TDELTA = 1
+MAX_TDELTA = 200
+INDEX_DIR = "constellation_index"
+RECORD_SECONDS = 7
+MIN_MATCHES = 20
+# ============================================
+
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+print(f"🚀 Using device: {device}", flush=True)
+
+# Prebuild GPU transforms
+spec_tf = torchaudio.transforms.Spectrogram(n_fft=N_FFT, hop_length=HOP, power=None).to(device)
+amp2db_tf = torchaudio.transforms.AmplitudeToDB(top_db=80).to(device)
+
+# -------- FULL WARM-UP INIT (GPU + audio) --------
+print("⚙️ Warming up DSP + Mic...", flush=True)
+if device.type == "cuda":
+    _dummy = torch.randn(1, SR, device=device)
+    _ = spec_tf(_dummy.unsqueeze(0))
+    _ = amp2db_tf(torch.abs(spec_tf(_dummy.unsqueeze(0))))
+
+sd.query_devices()
+sd.default.samplerate = 44100
+try:
+    sd.Stream(samplerate=44100, channels=1).close()
+except:
+    pass
+print("✅ Ready.\n", flush=True)
+
+
+# ---- DSP helpers ----
+def spectrogram_db_from_tensor(wav, sr):
+    if sr != SR:
+        wav = torchaudio.functional.resample(wav, sr, SR)
+    wav = torch.mean(wav, dim=0, keepdim=True).to(device)
+    spec = spec_tf(wav)
+    mag  = torch.abs(spec).squeeze(0)
+    db   = amp2db_tf(mag)
+    return db.detach().cpu().numpy()
+
+def peak_coords(S_db):
+    from scipy.ndimage import maximum_filter
+    local_max = maximum_filter(S_db, size=PEAK_NEIGHBORHOOD) == S_db
+    mask = S_db > AMP_DB_MIN
+    peaks = np.argwhere(local_max & mask)
+    if len(peaks): peaks = peaks[np.argsort(peaks[:, 1])]
+    return peaks
+
+def hashes_from_peaks(peaks):
+    H = []
+    L = len(peaks)
+    hop_sec = HOP / SR
+    for i in range(L):
+        f1, t1 = peaks[i]
+        for j in range(1, FAN_VALUE):
+            if i+j >= L: break
+            f2, t2 = peaks[i+j]
+            dt = t2 - t1
+            if MIN_TDELTA <= dt <= MAX_TDELTA:
+                raw = f"{int(f1)}|{int(f2)}|{int(dt)}"
+                h = hashlib.sha1(raw.encode()).hexdigest()[:20]
+                H.append((h, t1 * hop_sec))
+    return H
+
+
+# ---- Audio record ----
+def record_audio():
+    try:
+        import winsound
+        print("🎤 Mic prepping...", flush=True)
+        time.sleep(0.25)
+        winsound.Beep(1000, 120)
+    except:
+        print("🎤 Mic prepping...", flush=True)
+        time.sleep(0.25)
+
+    print(f"🎤 Recording {RECORD_SECONDS}s...", flush=True)
+    fs = 44100
+    rec = sd.rec(int(RECORD_SECONDS * fs), samplerate=fs, channels=1, dtype='float32')
+    sd.wait()
+    write("query.wav", fs, rec)
+    print("✅ Clip saved\n", flush=True)
+    return "query.wav"
+
+
+# ---- Load inverted index ----
+def load_index():
+    with open(os.path.join(INDEX_DIR, "inverted_index.json"), "r") as f:
+        inv = json.load(f)
+    with open(os.path.join(INDEX_DIR, "songs_meta.json"), "r") as f:
+        meta = {m["id"]: m for m in json.load(f)}
+    return inv, meta
+
+
+# ---- Matching ----
+def recognize(file, inv, meta_by_id):
+    wav, sr = torchaudio.load(file)
+    S_db = spectrogram_db_from_tensor(wav, sr)
+    peaks = peak_coords(S_db)
+    qhashes = hashes_from_peaks(peaks)
+
+    votes = defaultdict(list)
+    for h, qt in qhashes:
+        for sid, dbt in inv.get(h, []):
+            votes[sid].append(round(dbt - qt, 2))
+
+    if not votes: return None, 0, 0
+
+    best_sid, best_align, best_total = None, 0, 0
+    for sid, deltas in votes.items():
+        total = len(deltas)
+        align = Counter(deltas).most_common(1)[0][1]
+        if align > best_align or (align == best_align and total > best_total):
+            best_sid, best_align, best_total = sid, align, total
+
+    if best_align < MIN_MATCHES: return None, best_align, 0.0
+
+    m = meta_by_id[int(best_sid)]
+    conf = best_align / max(1, best_total)
+    return m, best_align, conf
+
+
+# ---- Main loop ----
+if __name__ == "__main__":
+    inv, meta = load_index()
+
+    while True:
+        print("\n🎧 Press ENTER to identify song (Ctrl+C to quit)")
+        input()
+
+        q = record_audio()
+
+        print("🔍 Matching...", flush=True)
+        match, align, conf = recognize(q, inv, meta)
+
+        if match:
+            print(f"\n✅ Song Recognized!")
+            print(f"🎤 Artist: {match['artist']}")
+            print(f"🎵 Title : {match['title']}")
+            print(f"📊 Align : {align}")
+            print(f"⚖️ Conf  : {conf:.2f}")
+        else:
+            print(f"\n❌ No confident match (align={align}) — try louder or closer.")
+
+recognise_constellation.py
+-----
+from fastapi import FastAPI, UploadFile, File
+from fastapi.middleware.cors import CORSMiddleware
+import shutil, uuid, os, subprocess
+from src.server.dsp_engine import recognize_file
+
+app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:5173", "*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+UPLOAD_DIR = "tmp_uploads"
+os.makedirs(UPLOAD_DIR, exist_ok=True)
+
+def convert_to_wav(src_path, dst_path):
+    """Convert webm/mp3/mp4 to wav using ffmpeg"""
+    try:
+        subprocess.run(
+            ["ffmpeg", "-y", "-i", src_path, "-ar", "44100", "-ac", "1", dst_path],
+            stdout=subprocess.DEVNULL,
+            stderr=subprocess.DEVNULL,
+        )
+        return True
+    except Exception:
+        return False
+
+@app.post("/recognize")
+async def recognize(audio: UploadFile = File(...)):
+    ext = audio.filename.split(".")[-1]
+    temp_raw = os.path.join(UPLOAD_DIR, f"{uuid.uuid4()}.{ext}")
+    temp_wav = os.path.join(UPLOAD_DIR, f"{uuid.uuid4()}.wav")
+
+    with open(temp_raw, "wb") as buffer:
+        shutil.copyfileobj(audio.file, buffer)
+
+    # ✅ Convert webm to wav before recognition
+    convert_to_wav(temp_raw, temp_wav)
+
+    try:
+        match, align, conf = recognize_file(temp_wav)
+    finally:
+        if os.path.exists(temp_raw): os.remove(temp_raw)
+        if os.path.exists(temp_wav): os.remove(temp_wav)
+
+    if not match:
+        return {"success": False, "message": "no_match"}
+
+    return {
+        "success": True,
+        "artist": match["artist"],
+        "title": match["title"],
+        "align": align,
+        "confidence": conf
+    }
+
+server/api.py
+-----
+import sys, os
+sys.path.append(os.path.abspath("."))
+
+import json, hashlib
+from collections import defaultdict, Counter
+import torch, torchaudio
+from src.recognize_constellation import (
+    HOP, SR, MIN_MATCHES,
+    spectrogram_db_from_tensor, peak_coords, hashes_from_peaks
+)
+
+
+INDEX_DIR = "constellation_index"
+
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
+def load_index():
+    with open(os.path.join(INDEX_DIR, "inverted_index.json")) as f:
+        inv = json.load(f)
+    with open(os.path.join(INDEX_DIR, "songs_meta.json")) as f:
+        meta = json.load(f)
+    return inv, {m["id"]: m for m in meta}
+
+print("🔧 Loading fingerprint DB in memory...")
+inv, meta_by_id = load_index()
+print(f"✅ Loaded {len(meta_by_id)} songs")
+
+
+def recognize_file(path):
+    wav, sr = torchaudio.load(path)
+    S_db = spectrogram_db_from_tensor(wav, sr)
+    peaks = peak_coords(S_db)
+    qhashes = hashes_from_peaks(peaks)
+
+    votes = defaultdict(list)
+    for h, qt in qhashes:
+        for sid, dbt in inv.get(h, []):
+            votes[sid].append(round(dbt - qt, 2))
+
+    if not votes:
+        return None, 0, 0
+
+    best_sid, best_align, best_total = None, 0, 0
+    for sid, deltas in votes.items():
+        total = len(deltas)
+        align = Counter(deltas).most_common(1)[0][1]
+        if align > best_align or (align == best_align and total > best_total):
+            best_sid, best_align, best_total = sid, align, total
+
+    if best_align < MIN_MATCHES:
+        return None, best_align, 0
+
+    info = meta_by_id[int(best_sid)]
+    confidence = best_align / max(1, best_total)
+    return info, best_align, confidence
+
+dsp_engine.py
+-----
+these are the only py files i have excpet
+collect dataset.py
+import os
+import yt_dlp
+import spotipy
+from spotipy.oauth2 import SpotifyClientCredentials
+
+# --- SETUP ---
+SPOTIFY_CLIENT_ID = "d5461361d1434c8bac1d25e5be887319"
+SPOTIFY_CLIENT_SECRET = "e87f89dec5494851a60119c99de29d9a"
+
+sp = spotipy.Spotify(auth_manager=SpotifyClientCredentials(
+    client_id=SPOTIFY_CLIENT_ID,
+    client_secret=SPOTIFY_CLIENT_SECRET
+))
+
+def download_audio(query, output_path):
+    ydl_opts = {
+        'format': 'bestaudio/best',
+        'outtmpl': output_path,
+        'quiet': True,
+        'postprocessors': [{
+            'key': 'FFmpegExtractAudio',
+            'preferredcodec': 'wav',
+            'preferredquality': '192',
+        }],
+    }
+    with yt_dlp.YoutubeDL(ydl_opts) as ydl:
+        ydl.download([f"ytsearch1:{query}"])
+
+def fetch_playlist_songs(playlist_url):
+    playlist = sp.playlist_tracks(playlist_url)
+    tracks = []
+    for item in playlist['items']:
+        track = item['track']
+        title = track['name']
+        artist = track['artists'][0]['name']
+        tracks.append((title, artist))
+    return tracks
+
+def build_dataset(playlist_url):
+    tracks = fetch_playlist_songs(playlist_url)
+    for title, artist in tracks:
+        folder = os.path.join("dataset", artist)
+        os.makedirs(folder, exist_ok=True)
+        output_file = os.path.join(folder, f"{title}.wav")
+        query = f"{title} {artist} audio"
+        print(f"Downloading: {query}")
+        download_audio(query, output_file)
+    print("✅ Dataset built successfully!")
+
+if __name__ == "__main__":
+    playlist_link = input("Enter Spotify playlist link: ")
+    build_dataset(playlist_link)

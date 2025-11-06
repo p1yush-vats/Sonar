@@ -1,0 +1,1412 @@
+[
+    {
+        "id": "asap_rocky_praise_the_lord_da_shine_feat_skepta",
+        "artist": "A$AP Rocky",
+        "title": "Praise The Lord (Da Shine) (feat. Skepta)",
+        "fingerprint": "fingerprints/A$AP Rocky/Praise The Lord (Da Shine) (feat. Skepta).npy"
+    },
+    {
+        "id": "alec_benjamin_if_we_have_each_other",
+        "artist": "Alec Benjamin",
+        "title": "If We Have Each Other",
+        "fingerprint": "fingerprints/Alec Benjamin/If We Have Each Other.npy"
+    },
+    {
+        "id": "alec_benjamin_let_me_down_slowly",
+        "artist": "Alec Benjamin",
+        "title": "Let Me Down Slowly",
+        "fingerprint": "fingerprints/Alec Benjamin/Let Me Down Slowly.npy"
+    },
+    {
+        "id": "alec_benjamin_water_fountain",
+        "artist": "Alec Benjamin",
+        "title": "Water Fountain",
+        "fingerprint": "fingerprints/Alec Benjamin/Water Fountain.npy"
+    },
+    {
+        "id": "alex_and_sierra_little_do_you_know",
+        "artist": "Alex & Sierra",
+        "title": "Little Do You Know",
+        "fingerprint": "fingerprints/Alex & Sierra/Little Do You Know.npy"
+    },
+    {
+        "id": "arctic_monkeys_505",
+        "artist": "Arctic Monkeys",
+        "title": "505",
+        "fingerprint": "fingerprints/Arctic Monkeys/505.npy"
+    },
+    {
+        "id": "arctic_monkeys_i_wanna_be_yours",
+        "artist": "Arctic Monkeys",
+        "title": "I Wanna Be Yours",
+        "fingerprint": "fingerprints/Arctic Monkeys/I Wanna Be Yours.npy"
+    },
+    {
+        "id": "backstreet_boys_i_want_it_that_way",
+        "artist": "Backstreet Boys",
+        "title": "I Want It That Way",
+        "fingerprint": "fingerprints/Backstreet Boys/I Want It That Way.npy"
+    },
+    {
+        "id": "badshah_boht_tej",
+        "artist": "Badshah",
+        "title": "Boht Tej",
+        "fingerprint": "fingerprints/Badshah/Boht Tej.npy"
+    },
+    {
+        "id": "badshah_proper_patola",
+        "artist": "Badshah",
+        "title": "Proper Patola",
+        "fingerprint": "fingerprints/Badshah/Proper Patola.npy"
+    },
+    {
+        "id": "banners_someone_to_you",
+        "artist": "BANNERS",
+        "title": "Someone To You",
+        "fingerprint": "fingerprints/BANNERS/Someone To You.npy"
+    },
+    {
+        "id": "benny_blanco_graduation_with_juice_wrld",
+        "artist": "benny blanco",
+        "title": "Graduation (with Juice WRLD)",
+        "fingerprint": "fingerprints/benny blanco/Graduation (with Juice WRLD).npy"
+    },
+    {
+        "id": "benny_blanco_roses_with_juice_wrld_feat_brendon_urie",
+        "artist": "benny blanco",
+        "title": "Roses (with Juice WRLD feat. Brendon Urie)",
+        "fingerprint": "fingerprints/benny blanco/Roses (with Juice WRLD feat. Brendon Urie).npy"
+    },
+    {
+        "id": "billie_eilish_birds_of_a_feather",
+        "artist": "Billie Eilish",
+        "title": "BIRDS OF A FEATHER",
+        "fingerprint": "fingerprints/Billie Eilish/BIRDS OF A FEATHER.npy"
+    },
+    {
+        "id": "billie_eilish_lovely_with_khalid",
+        "artist": "Billie Eilish",
+        "title": "lovely (with Khalid)",
+        "fingerprint": "fingerprints/Billie Eilish/lovely (with Khalid).npy"
+    },
+    {
+        "id": "billie_eilish_lunch",
+        "artist": "Billie Eilish",
+        "title": "LUNCH",
+        "fingerprint": "fingerprints/Billie Eilish/LUNCH.npy"
+    },
+    {
+        "id": "bruno_mars_count_on_me",
+        "artist": "Bruno Mars",
+        "title": "Count on Me",
+        "fingerprint": "fingerprints/Bruno Mars/Count on Me.npy"
+    },
+    {
+        "id": "bruno_mars_marry_you",
+        "artist": "Bruno Mars",
+        "title": "Marry You",
+        "fingerprint": "fingerprints/Bruno Mars/Marry You.npy"
+    },
+    {
+        "id": "bruno_mars_that's_what_i_like",
+        "artist": "Bruno Mars",
+        "title": "That's What I Like",
+        "fingerprint": "fingerprints/Bruno Mars/That's What I Like.npy"
+    },
+    {
+        "id": "charlie_puth_attention",
+        "artist": "Charlie Puth",
+        "title": "Attention",
+        "fingerprint": "fingerprints/Charlie Puth/Attention.npy"
+    },
+    {
+        "id": "charlie_puth_how_long",
+        "artist": "Charlie Puth",
+        "title": "How Long",
+        "fingerprint": "fingerprints/Charlie Puth/How Long.npy"
+    },
+    {
+        "id": "charlie_puth_light_switch",
+        "artist": "Charlie Puth",
+        "title": "Light Switch",
+        "fingerprint": "fingerprints/Charlie Puth/Light Switch.npy"
+    },
+    {
+        "id": "charlie_puth_we_don't_talk_anymore_feat_selena_gomez",
+        "artist": "Charlie Puth",
+        "title": "We Don't Talk Anymore (feat. Selena Gomez)",
+        "fingerprint": "fingerprints/Charlie Puth/We Don't Talk Anymore (feat. Selena Gomez).npy"
+    },
+    {
+        "id": "clean_bandit_rather_be_feat_jess_glynne",
+        "artist": "Clean Bandit",
+        "title": "Rather Be (feat. Jess Glynne)",
+        "fingerprint": "fingerprints/Clean Bandit/Rather Be (feat. Jess Glynne).npy"
+    },
+    {
+        "id": "coldplay_viva_la_vida",
+        "artist": "Coldplay",
+        "title": "Viva La Vida",
+        "fingerprint": "fingerprints/Coldplay/Viva La Vida.npy"
+    },
+    {
+        "id": "conan_gray_heather",
+        "artist": "Conan Gray",
+        "title": "Heather",
+        "fingerprint": "fingerprints/Conan Gray/Heather.npy"
+    },
+    {
+        "id": "conan_gray_maniac",
+        "artist": "Conan Gray",
+        "title": "Maniac",
+        "fingerprint": "fingerprints/Conan Gray/Maniac.npy"
+    },
+    {
+        "id": "d4vd_feel_it",
+        "artist": "d4vd",
+        "title": "Feel It",
+        "fingerprint": "fingerprints/d4vd/Feel It.npy"
+    },
+    {
+        "id": "dank_rishu_wushang_clan",
+        "artist": "Dank Rishu",
+        "title": "WuShang Clan",
+        "fingerprint": "fingerprints/Dank Rishu/WuShang Clan.npy"
+    },
+    {
+        "id": "dhanji_4424",
+        "artist": "Dhanji",
+        "title": "4424",
+        "fingerprint": "fingerprints/Dhanji/4424.npy"
+    },
+    {
+        "id": "dhanji_bla_ka_ka_ka",
+        "artist": "Dhanji",
+        "title": "Bla Ka Ka Ka",
+        "fingerprint": "fingerprints/Dhanji/Bla Ka Ka Ka.npy"
+    },
+    {
+        "id": "dhanji_kaisa",
+        "artist": "Dhanji",
+        "title": "Kaisa",
+        "fingerprint": "fingerprints/Dhanji/Kaisa.npy"
+    },
+    {
+        "id": "dino_james_kaalia",
+        "artist": "Dino James",
+        "title": "Kaalia",
+        "fingerprint": "fingerprints/Dino James/Kaalia.npy"
+    },
+    {
+        "id": "dj_snake_let_me_love_you",
+        "artist": "DJ Snake",
+        "title": "Let Me Love You",
+        "fingerprint": "fingerprints/DJ Snake/Let Me Love You.npy"
+    },
+    {
+        "id": "drake_god's_plan",
+        "artist": "Drake",
+        "title": "God's Plan",
+        "fingerprint": "fingerprints/Drake/God's Plan.npy"
+    },
+    {
+        "id": "drake_toosie_slide",
+        "artist": "Drake",
+        "title": "Toosie Slide",
+        "fingerprint": "fingerprints/Drake/Toosie Slide.npy"
+    },
+    {
+        "id": "dreamville_under_the_sun_with_j_cole_and_lute_feat_dababy",
+        "artist": "Dreamville",
+        "title": "Under The Sun (with J. Cole & Lute feat. DaBaby)",
+        "fingerprint": "fingerprints/Dreamville/Under The Sun (with J. Cole & Lute feat. DaBaby).npy"
+    },
+    {
+        "id": "ed_sheeran_bad_habits",
+        "artist": "Ed Sheeran",
+        "title": "Bad Habits",
+        "fingerprint": "fingerprints/Ed Sheeran/Bad Habits.npy"
+    },
+    {
+        "id": "ed_sheeran_perfect",
+        "artist": "Ed Sheeran",
+        "title": "Perfect",
+        "fingerprint": "fingerprints/Ed Sheeran/Perfect.npy"
+    },
+    {
+        "id": "ed_sheeran_shape_of_you",
+        "artist": "Ed Sheeran",
+        "title": "Shape of You",
+        "fingerprint": "fingerprints/Ed Sheeran/Shape of You.npy"
+    },
+    {
+        "id": "ed_sheeran_and_justin_bieber_i_don't_care_with_justin_bieber",
+        "artist": "Ed Sheeran & Justin Bieber",
+        "title": "I Don't Care (with Justin Bieber)",
+        "fingerprint": "fingerprints/Ed Sheeran & Justin Bieber/I Don't Care (with Justin Bieber).npy"
+    },
+    {
+        "id": "edith_whiskers_home",
+        "artist": "Edith Whiskers",
+        "title": "Home",
+        "fingerprint": "fingerprints/Edith Whiskers/Home.npy"
+    },
+    {
+        "id": "ellie_goulding_hate_me_with_juice_wrld",
+        "artist": "Ellie Goulding",
+        "title": "Hate Me (with Juice WRLD)",
+        "fingerprint": "fingerprints/Ellie Goulding/Hate Me (with Juice WRLD).npy"
+    },
+    {
+        "id": "ellie_goulding_love_me_like_you_do",
+        "artist": "Ellie Goulding",
+        "title": "Love Me Like You Do",
+        "fingerprint": "fingerprints/Ellie Goulding/Love Me Like You Do.npy"
+    },
+    {
+        "id": "eminem_killshot",
+        "artist": "Eminem",
+        "title": "Killshot",
+        "fingerprint": "fingerprints/Eminem/Killshot.npy"
+    },
+    {
+        "id": "eminem_love_the_way_you_lie",
+        "artist": "Eminem",
+        "title": "Love The Way You Lie",
+        "fingerprint": "fingerprints/Eminem/Love The Way You Lie.npy"
+    },
+    {
+        "id": "eminem_not_afraid",
+        "artist": "Eminem",
+        "title": "Not Afraid",
+        "fingerprint": "fingerprints/Eminem/Not Afraid.npy"
+    },
+    {
+        "id": "eminem_rap_god",
+        "artist": "Eminem",
+        "title": "Rap God",
+        "fingerprint": "fingerprints/Eminem/Rap God.npy"
+    },
+    {
+        "id": "eminem_the_real_slim_shady",
+        "artist": "Eminem",
+        "title": "The Real Slim Shady",
+        "fingerprint": "fingerprints/Eminem/The Real Slim Shady.npy"
+    },
+    {
+        "id": "fatboibari_moonlight_shawty",
+        "artist": "Fatboibari",
+        "title": "Moonlight Shawty",
+        "fingerprint": "fingerprints/Fatboibari/Moonlight Shawty.npy"
+    },
+    {
+        "id": "fazilpuria_2_many_girls",
+        "artist": "Fazilpuria",
+        "title": "2 Many Girls",
+        "fingerprint": "fingerprints/Fazilpuria/2 Many Girls.npy"
+    },
+    {
+        "id": "fotty_seven_baap_se",
+        "artist": "Fotty Seven",
+        "title": "Baap Se",
+        "fingerprint": "fingerprints/Fotty Seven/Baap Se.npy"
+    },
+    {
+        "id": "fotty_seven_banjo",
+        "artist": "Fotty Seven",
+        "title": "Banjo",
+        "fingerprint": "fingerprints/Fotty Seven/Banjo.npy"
+    },
+    {
+        "id": "fotty_seven_chal_nikal",
+        "artist": "Fotty Seven",
+        "title": "Chal Nikal",
+        "fingerprint": "fingerprints/Fotty Seven/Chal Nikal.npy"
+    },
+    {
+        "id": "fotty_seven_chaud",
+        "artist": "Fotty Seven",
+        "title": "Chaud",
+        "fingerprint": "fingerprints/Fotty Seven/Chaud.npy"
+    },
+    {
+        "id": "fotty_seven_galat_launda",
+        "artist": "Fotty Seven",
+        "title": "Galat Launda",
+        "fingerprint": "fingerprints/Fotty Seven/Galat Launda.npy"
+    },
+    {
+        "id": "fotty_seven_gooda",
+        "artist": "Fotty Seven",
+        "title": "Gooda",
+        "fingerprint": "fingerprints/Fotty Seven/Gooda.npy"
+    },
+    {
+        "id": "fotty_seven_haath_toh_laga",
+        "artist": "Fotty Seven",
+        "title": "Haath Toh Laga",
+        "fingerprint": "fingerprints/Fotty Seven/Haath Toh Laga.npy"
+    },
+    {
+        "id": "fotty_seven_pagal_hai_kya",
+        "artist": "Fotty Seven",
+        "title": "Pagal Hai Kya",
+        "fingerprint": "fingerprints/Fotty Seven/Pagal Hai Kya.npy"
+    },
+    {
+        "id": "fotty_seven_tu_hai_kaun",
+        "artist": "Fotty Seven",
+        "title": "Tu Hai Kaun",
+        "fingerprint": "fingerprints/Fotty Seven/Tu Hai Kaun.npy"
+    },
+    {
+        "id": "fotty_seven_zero_fark",
+        "artist": "Fotty Seven",
+        "title": "Zero Fark",
+        "fingerprint": "fingerprints/Fotty Seven/Zero Fark.npy"
+    },
+    {
+        "id": "future_life_is_good_feat_drake",
+        "artist": "Future",
+        "title": "Life Is Good (feat. Drake)",
+        "fingerprint": "fingerprints/Future/Life Is Good (feat. Drake).npy"
+    },
+    {
+        "id": "future_mask_off",
+        "artist": "Future",
+        "title": "Mask Off",
+        "fingerprint": "fingerprints/Future/Mask Off.npy"
+    },
+    {
+        "id": "gotye_somebody_that_i_used_to_know",
+        "artist": "Gotye",
+        "title": "Somebody That I Used To Know",
+        "fingerprint": "fingerprints/Gotye/Somebody That I Used To Know.npy"
+    },
+    {
+        "id": "gravity_jalaluddin",
+        "artist": "Gravity",
+        "title": "Jalaluddin",
+        "fingerprint": "fingerprints/Gravity/Jalaluddin.npy"
+    },
+    {
+        "id": "grover_washington,_jr#_just_the_two_of_us_feat_bill_withers___edit",
+        "artist": "Grover Washington, Jr#",
+        "title": "Just the Two of Us (feat. Bill Withers) - Edit",
+        "fingerprint": "fingerprints/Grover Washington, Jr#/Just the Two of Us (feat. Bill Withers) - Edit.npy"
+    },
+    {
+        "id": "gym_class_heroes_stereo_hearts_feat_adam_levine",
+        "artist": "Gym Class Heroes",
+        "title": "Stereo Hearts (feat. Adam Levine)",
+        "fingerprint": "fingerprints/Gym Class Heroes/Stereo Hearts (feat. Adam Levine).npy"
+    },
+    {
+        "id": "halsey_without_me",
+        "artist": "Halsey",
+        "title": "Without Me",
+        "fingerprint": "fingerprints/Halsey/Without Me.npy"
+    },
+    {
+        "id": "ikka_nishu",
+        "artist": "Ikka",
+        "title": "Nishu",
+        "fingerprint": "fingerprints/Ikka/Nishu.npy"
+    },
+    {
+        "id": "ikka_sanki",
+        "artist": "Ikka",
+        "title": "Sanki",
+        "fingerprint": "fingerprints/Ikka/Sanki.npy"
+    },
+    {
+        "id": "ikka_trap_munde",
+        "artist": "Ikka",
+        "title": "Trap Munde",
+        "fingerprint": "fingerprints/Ikka/Trap Munde.npy"
+    },
+    {
+        "id": "ikka_woh",
+        "artist": "Ikka",
+        "title": "WOH",
+        "fingerprint": "fingerprints/Ikka/WOH.npy"
+    },
+    {
+        "id": "internet_money_lemonade_feat_gunna,_don_toliver_and_nav",
+        "artist": "Internet Money",
+        "title": "Lemonade (feat. Gunna, Don Toliver & NAV)",
+        "fingerprint": "fingerprints/Internet Money/Lemonade (feat. Gunna, Don Toliver & NAV).npy"
+    },
+    {
+        "id": "j_cole_forbidden_fruit_feat_kendrick_lamar",
+        "artist": "J. Cole",
+        "title": "Forbidden Fruit (feat. Kendrick Lamar)",
+        "fingerprint": "fingerprints/J. Cole/Forbidden Fruit (feat. Kendrick Lamar).npy"
+    },
+    {
+        "id": "j_cole_i_n_t_e_r_l_u_d_e",
+        "artist": "J. Cole",
+        "title": "i n t e r l u d e",
+        "fingerprint": "fingerprints/J. Cole/i n t e r l u d e.npy"
+    },
+    {
+        "id": "j_cole_wet_dreamz",
+        "artist": "J. Cole",
+        "title": "Wet Dreamz",
+        "fingerprint": "fingerprints/J. Cole/Wet Dreamz.npy"
+    },
+    {
+        "id": "jasontheween_summer_uptown_feat_d4vd",
+        "artist": "jasontheween",
+        "title": "Summer Uptown (feat. d4vd)",
+        "fingerprint": "fingerprints/jasontheween/Summer Uptown (feat. d4vd).npy"
+    },
+    {
+        "id": "jokhay_gulshan",
+        "artist": "Jokhay",
+        "title": "Gulshan",
+        "fingerprint": "fingerprints/Jokhay/Gulshan.npy"
+    },
+    {
+        "id": "juice_wrld_all_girls_are_the_same",
+        "artist": "Juice WRLD",
+        "title": "All Girls Are The Same",
+        "fingerprint": "fingerprints/Juice WRLD/All Girls Are The Same.npy"
+    },
+    {
+        "id": "juice_wrld_armed_and_dangerous",
+        "artist": "Juice WRLD",
+        "title": "Armed And Dangerous",
+        "fingerprint": "fingerprints/Juice WRLD/Armed And Dangerous.npy"
+    },
+    {
+        "id": "juice_wrld_bandit_with_youngboy_never_broke_again",
+        "artist": "Juice WRLD",
+        "title": "Bandit (with YoungBoy Never Broke Again)",
+        "fingerprint": "fingerprints/Juice WRLD/Bandit (with YoungBoy Never Broke Again).npy"
+    },
+    {
+        "id": "juice_wrld_empty",
+        "artist": "Juice WRLD",
+        "title": "Empty",
+        "fingerprint": "fingerprints/Juice WRLD/Empty.npy"
+    },
+    {
+        "id": "juice_wrld_hide_feat_seezyn",
+        "artist": "Juice WRLD",
+        "title": "Hide (feat. Seezyn)",
+        "fingerprint": "fingerprints/Juice WRLD/Hide (feat. Seezyn).npy"
+    },
+    {
+        "id": "juice_wrld_legends",
+        "artist": "Juice WRLD",
+        "title": "Legends",
+        "fingerprint": "fingerprints/Juice WRLD/Legends.npy"
+    },
+    {
+        "id": "juice_wrld_life's_a_mess_feat_halsey",
+        "artist": "Juice WRLD",
+        "title": "Life's A Mess (feat. Halsey)",
+        "fingerprint": "fingerprints/Juice WRLD/Life's A Mess (feat. Halsey).npy"
+    },
+    {
+        "id": "juice_wrld_robbery",
+        "artist": "Juice WRLD",
+        "title": "Robbery",
+        "fingerprint": "fingerprints/Juice WRLD/Robbery.npy"
+    },
+    {
+        "id": "juice_wrld_wasted_feat_lil_uzi_vert",
+        "artist": "Juice WRLD",
+        "title": "Wasted (feat. Lil Uzi Vert)",
+        "fingerprint": "fingerprints/Juice WRLD/Wasted (feat. Lil Uzi Vert).npy"
+    },
+    {
+        "id": "justin_bieber_baby",
+        "artist": "Justin Bieber",
+        "title": "Baby",
+        "fingerprint": "fingerprints/Justin Bieber/Baby.npy"
+    },
+    {
+        "id": "justin_bieber_boyfriend",
+        "artist": "Justin Bieber",
+        "title": "Boyfriend",
+        "fingerprint": "fingerprints/Justin Bieber/Boyfriend.npy"
+    },
+    {
+        "id": "justin_bieber_hold_on",
+        "artist": "Justin Bieber",
+        "title": "Hold On",
+        "fingerprint": "fingerprints/Justin Bieber/Hold On.npy"
+    },
+    {
+        "id": "jvke_golden_hour",
+        "artist": "JVKE",
+        "title": "golden hour",
+        "fingerprint": "fingerprints/JVKE/golden hour.npy"
+    },
+    {
+        "id": "kaam_bhaari_mohabbat",
+        "artist": "Kaam Bhaari",
+        "title": "Mohabbat",
+        "fingerprint": "fingerprints/Kaam Bhaari/Mohabbat.npy"
+    },
+    {
+        "id": "kanye_west_father_stretch_my_hands_pt_1",
+        "artist": "Kanye West",
+        "title": "Father Stretch My Hands Pt. 1",
+        "fingerprint": "fingerprints/Kanye West/Father Stretch My Hands Pt. 1.npy"
+    },
+    {
+        "id": "karun_maharani",
+        "artist": "Karun",
+        "title": "Maharani",
+        "fingerprint": "fingerprints/Karun/Maharani.npy"
+    },
+    {
+        "id": "kelly_clarkson_stronger_what_doesn't_kill_you",
+        "artist": "Kelly Clarkson",
+        "title": "Stronger (What Doesn't Kill You)",
+        "fingerprint": "fingerprints/Kelly Clarkson/Stronger (What Doesn't Kill You).npy"
+    },
+    {
+        "id": "kendrick_lamar_love_feat_zacari",
+        "artist": "Kendrick Lamar",
+        "title": "LOVE. FEAT. ZACARI.",
+        "fingerprint": "fingerprints/Kendrick Lamar/LOVE. FEAT. ZACARI..npy"
+    },
+    {
+        "id": "kendrick_lamar_n95",
+        "artist": "Kendrick Lamar",
+        "title": "N95",
+        "fingerprint": "fingerprints/Kendrick Lamar/N95.npy"
+    },
+    {
+        "id": "krsna_blowing_up",
+        "artist": "KR$NA",
+        "title": "Blowing Up",
+        "fingerprint": "fingerprints/KR$NA/Blowing Up.npy"
+    },
+    {
+        "id": "krsna_fall_off_interlude",
+        "artist": "KR$NA",
+        "title": "Fall Off (Interlude)",
+        "fingerprint": "fingerprints/KR$NA/Fall Off (Interlude).npy"
+    },
+    {
+        "id": "krsna_freeverse_feast",
+        "artist": "KR$NA",
+        "title": "Freeverse Feast",
+        "fingerprint": "fingerprints/KR$NA/Freeverse Feast.npy"
+    },
+    {
+        "id": "krsna_hola_amigo",
+        "artist": "KR$NA",
+        "title": "Hola Amigo",
+        "fingerprint": "fingerprints/KR$NA/Hola Amigo.npy"
+    },
+    {
+        "id": "krsna_i_guess",
+        "artist": "KR$NA",
+        "title": "I Guess",
+        "fingerprint": "fingerprints/KR$NA/I Guess.npy"
+    },
+    {
+        "id": "krsna_lil_bunty",
+        "artist": "KR$NA",
+        "title": "Lil Bunty",
+        "fingerprint": "fingerprints/KR$NA/Lil Bunty.npy"
+    },
+    {
+        "id": "krsna_makasam",
+        "artist": "KR$NA",
+        "title": "Makasam",
+        "fingerprint": "fingerprints/KR$NA/Makasam.npy"
+    },
+    {
+        "id": "krsna_no_cap",
+        "artist": "KR$NA",
+        "title": "No Cap",
+        "fingerprint": "fingerprints/KR$NA/No Cap.npy"
+    },
+    {
+        "id": "krsna_prarthana",
+        "artist": "KR$NA",
+        "title": "Prarthana",
+        "fingerprint": "fingerprints/KR$NA/Prarthana.npy"
+    },
+    {
+        "id": "krsna_say_my_name",
+        "artist": "KR$NA",
+        "title": "Say My Name",
+        "fingerprint": "fingerprints/KR$NA/Say My Name.npy"
+    },
+    {
+        "id": "krsna_seedha_makeover",
+        "artist": "KR$NA",
+        "title": "Seedha Makeover",
+        "fingerprint": "fingerprints/KR$NA/Seedha Makeover.npy"
+    },
+    {
+        "id": "krsna_some_of_us",
+        "artist": "KR$NA",
+        "title": "Some Of Us",
+        "fingerprint": "fingerprints/KR$NA/Some Of Us.npy"
+    },
+    {
+        "id": "kyle_ispy_feat_lil_yachty",
+        "artist": "KYLE",
+        "title": "iSpy (feat. Lil Yachty)",
+        "fingerprint": "fingerprints/KYLE/iSpy (feat. Lil Yachty).npy"
+    },
+    {
+        "id": "lauv_i_like_me_better",
+        "artist": "Lauv",
+        "title": "I Like Me Better",
+        "fingerprint": "fingerprints/Lauv/I Like Me Better.npy"
+    },
+    {
+        "id": "lil_baby_drip_too_hard_lil_baby_and_gunna",
+        "artist": "Lil Baby",
+        "title": "Drip Too Hard (Lil Baby & Gunna)",
+        "fingerprint": "fingerprints/Lil Baby/Drip Too Hard (Lil Baby & Gunna).npy"
+    },
+    {
+        "id": "lil_mosey_blueberry_faygo",
+        "artist": "Lil Mosey",
+        "title": "Blueberry Faygo",
+        "fingerprint": "fingerprints/Lil Mosey/Blueberry Faygo.npy"
+    },
+    {
+        "id": "lil_mosey_stuck_in_a_dream_feat_gunna",
+        "artist": "Lil Mosey",
+        "title": "Stuck In A Dream (feat. Gunna)",
+        "fingerprint": "fingerprints/Lil Mosey/Stuck In A Dream (feat. Gunna).npy"
+    },
+    {
+        "id": "lil_tecca_ransom_with_juice_wrld___remix",
+        "artist": "Lil Tecca",
+        "title": "Ransom (with Juice WRLD) - Remix",
+        "fingerprint": "fingerprints/Lil Tecca/Ransom (with Juice WRLD) - Remix.npy"
+    },
+    {
+        "id": "lil_tjay_hold_on",
+        "artist": "Lil Tjay",
+        "title": "Hold On",
+        "fingerprint": "fingerprints/Lil Tjay/Hold On.npy"
+    },
+    {
+        "id": "lil_uzi_vert_20_min",
+        "artist": "Lil Uzi Vert",
+        "title": "20 Min",
+        "fingerprint": "fingerprints/Lil Uzi Vert/20 Min.npy"
+    },
+    {
+        "id": "lil_uzi_vert_xo_tour_llif3",
+        "artist": "Lil Uzi Vert",
+        "title": "XO Tour Llif3",
+        "fingerprint": "fingerprints/Lil Uzi Vert/XO Tour Llif3.npy"
+    },
+    {
+        "id": "lil_wayne_scared_of_the_dark_feat_xxxtentacion",
+        "artist": "Lil Wayne",
+        "title": "Scared of the Dark (feat. XXXTENTACION)",
+        "fingerprint": "fingerprints/Lil Wayne/Scared of the Dark (feat. XXXTENTACION).npy"
+    },
+    {
+        "id": "logic_1_800_273_8255",
+        "artist": "Logic",
+        "title": "1-800-273-8255",
+        "fingerprint": "fingerprints/Logic/1-800-273-8255.npy"
+    },
+    {
+        "id": "luh_kel_wrong",
+        "artist": "Luh Kel",
+        "title": "Wrong",
+        "fingerprint": "fingerprints/Luh Kel/Wrong.npy"
+    },
+    {
+        "id": "luis_fonsi_despacito___remix",
+        "artist": "Luis Fonsi",
+        "title": "Despacito - Remix",
+        "fingerprint": "fingerprints/Luis Fonsi/Despacito - Remix.npy"
+    },
+    {
+        "id": "major_lazer_lean_on_feat_mø_and_dj_snake",
+        "artist": "Major Lazer",
+        "title": "Lean On (feat. MØ & DJ Snake)",
+        "fingerprint": "fingerprints/Major Lazer/Lean On (feat. MØ & DJ Snake).npy"
+    },
+    {
+        "id": "mark_ronson_nothing_breaks_like_a_heart_feat_miley_cyrus",
+        "artist": "Mark Ronson",
+        "title": "Nothing Breaks Like a Heart (feat. Miley Cyrus)",
+        "fingerprint": "fingerprints/Mark Ronson/Nothing Breaks Like a Heart (feat. Miley Cyrus).npy"
+    },
+    {
+        "id": "maroon_5_memories",
+        "artist": "Maroon 5",
+        "title": "Memories",
+        "fingerprint": "fingerprints/Maroon 5/Memories.npy"
+    },
+    {
+        "id": "maroon_5_payphone",
+        "artist": "Maroon 5",
+        "title": "Payphone",
+        "fingerprint": "fingerprints/Maroon 5/Payphone.npy"
+    },
+    {
+        "id": "marshmello_bye_bye",
+        "artist": "Marshmello",
+        "title": "Bye Bye",
+        "fingerprint": "fingerprints/Marshmello/Bye Bye.npy"
+    },
+    {
+        "id": "metro_boomin_annihilate_spider_man#_across_the_spider_verse_metro_boomin_and_swae_lee,_lil_wayne,_offset",
+        "artist": "Metro Boomin",
+        "title": "Annihilate (Spider-Man# Across the Spider-Verse) (Metro Boomin & Swae Lee, Lil Wayne, Offset)",
+        "fingerprint": "fingerprints/Metro Boomin/Annihilate (Spider-Man# Across the Spider-Verse) (Metro Boomin & Swae Lee, Lil Wayne, Offset).npy"
+    },
+    {
+        "id": "metro_boomin_self_love_spider_man#_across_the_spider_verse_metro_boomin_and_coi_leray",
+        "artist": "Metro Boomin",
+        "title": "Self Love (Spider-Man# Across the Spider-Verse) (Metro Boomin & Coi Leray)",
+        "fingerprint": "fingerprints/Metro Boomin/Self Love (Spider-Man# Across the Spider-Verse) (Metro Boomin & Coi Leray).npy"
+    },
+    {
+        "id": "metro_boomin_space_cadet_feat_gunna",
+        "artist": "Metro Boomin",
+        "title": "Space Cadet (feat. Gunna)",
+        "fingerprint": "fingerprints/Metro Boomin/Space Cadet (feat. Gunna).npy"
+    },
+    {
+        "id": "naam_sujal_pyaar#",
+        "artist": "Naam Sujal",
+        "title": "PYAAR#",
+        "fingerprint": "fingerprints/Naam Sujal/PYAAR#.npy"
+    },
+    {
+        "id": "nanku_raadhe_shyam",
+        "artist": "Nanku",
+        "title": "Raadhe Shyam",
+        "fingerprint": "fingerprints/Nanku/Raadhe Shyam.npy"
+    },
+    {
+        "id": "nanku_soja",
+        "artist": "Nanku",
+        "title": "SOJA",
+        "fingerprint": "fingerprints/Nanku/SOJA.npy"
+    },
+    {
+        "id": "nf_let_you_down",
+        "artist": "NF",
+        "title": "Let You Down",
+        "fingerprint": "fingerprints/NF/Let You Down.npy"
+    },
+    {
+        "id": "nf_lie",
+        "artist": "NF",
+        "title": "Lie",
+        "fingerprint": "fingerprints/NF/Lie.npy"
+    },
+    {
+        "id": "nf_the_search",
+        "artist": "NF",
+        "title": "The Search",
+        "fingerprint": "fingerprints/NF/The Search.npy"
+    },
+    {
+        "id": "nicky_youre_sunroof",
+        "artist": "Nicky Youre",
+        "title": "Sunroof",
+        "fingerprint": "fingerprints/Nicky Youre/Sunroof.npy"
+    },
+    {
+        "id": "offset_danger_spider_offset_and_jid",
+        "artist": "Offset",
+        "title": "Danger (Spider) (Offset & JID)",
+        "fingerprint": "fingerprints/Offset/Danger (Spider) (Offset & JID).npy"
+    },
+    {
+        "id": "onerepublic_counting_stars",
+        "artist": "OneRepublic",
+        "title": "Counting Stars",
+        "fingerprint": "fingerprints/OneRepublic/Counting Stars.npy"
+    },
+    {
+        "id": "panther_galat_karam",
+        "artist": "Panther",
+        "title": "Galat Karam",
+        "fingerprint": "fingerprints/Panther/Galat Karam.npy"
+    },
+    {
+        "id": "paradox_chhore_ncr_aale",
+        "artist": "Paradox",
+        "title": "Chhore Ncr Aale",
+        "fingerprint": "fingerprints/Paradox/Chhore Ncr Aale.npy"
+    },
+    {
+        "id": "paradox_gang_wale_munde",
+        "artist": "Paradox",
+        "title": "Gang Wale Munde",
+        "fingerprint": "fingerprints/Paradox/Gang Wale Munde.npy"
+    },
+    {
+        "id": "paradox_glitch",
+        "artist": "Paradox",
+        "title": "Glitch",
+        "fingerprint": "fingerprints/Paradox/Glitch.npy"
+    },
+    {
+        "id": "phillip_phillips_gone,_gone,_gone",
+        "artist": "Phillip Phillips",
+        "title": "Gone, Gone, Gone",
+        "fingerprint": "fingerprints/Phillip Phillips/Gone, Gone, Gone.npy"
+    },
+    {
+        "id": "playboi_carti_sky",
+        "artist": "Playboi Carti",
+        "title": "Sky",
+        "fingerprint": "fingerprints/Playboi Carti/Sky.npy"
+    },
+    {
+        "id": "playboi_carti_wokeuplikethis#",
+        "artist": "Playboi Carti",
+        "title": "wokeuplikethis#",
+        "fingerprint": "fingerprints/Playboi Carti/wokeuplikethis#.npy"
+    },
+    {
+        "id": "pop_smoke_what_you_know_bout_love",
+        "artist": "Pop Smoke",
+        "title": "What You Know Bout Love",
+        "fingerprint": "fingerprints/Pop Smoke/What You Know Bout Love.npy"
+    },
+    {
+        "id": "post_malone_sunflower___spider_man#_into_the_spider_verse",
+        "artist": "Post Malone",
+        "title": "Sunflower - Spider-Man# Into the Spider-Verse",
+        "fingerprint": "fingerprints/Post Malone/Sunflower - Spider-Man# Into the Spider-Verse.npy"
+    },
+    {
+        "id": "powfu_death_bed_feat_beabadoobee_and_blink_182___bonus_remix",
+        "artist": "Powfu",
+        "title": "death bed (feat. beabadoobee & blink-182) - bonus remix",
+        "fingerprint": "fingerprints/Powfu/death bed (feat. beabadoobee & blink-182) - bonus remix.npy"
+    },
+    {
+        "id": "public_make_you_mine",
+        "artist": "PUBLIC",
+        "title": "Make You Mine",
+        "fingerprint": "fingerprints/PUBLIC/Make You Mine.npy"
+    },
+    {
+        "id": "raftaar_36",
+        "artist": "Raftaar",
+        "title": "36",
+        "fingerprint": "fingerprints/Raftaar/36.npy"
+    },
+    {
+        "id": "raftaar_f16",
+        "artist": "Raftaar",
+        "title": "F16",
+        "fingerprint": "fingerprints/Raftaar/F16.npy"
+    },
+    {
+        "id": "raftaar_gangnum",
+        "artist": "Raftaar",
+        "title": "GANGNUM",
+        "fingerprint": "fingerprints/Raftaar/GANGNUM.npy"
+    },
+    {
+        "id": "raftaar_ice",
+        "artist": "Raftaar",
+        "title": "ICE",
+        "fingerprint": "fingerprints/Raftaar/ICE.npy"
+    },
+    {
+        "id": "raftaar_jashan_e_hip_hop",
+        "artist": "Raftaar",
+        "title": "JASHAN-E-HIP-HOP",
+        "fingerprint": "fingerprints/Raftaar/JASHAN-E-HIP-HOP.npy"
+    },
+    {
+        "id": "raftaar_never_back_down",
+        "artist": "Raftaar",
+        "title": "Never Back Down",
+        "fingerprint": "fingerprints/Raftaar/Never Back Down.npy"
+    },
+    {
+        "id": "raftaar_no_china",
+        "artist": "Raftaar",
+        "title": "NO CHINA",
+        "fingerprint": "fingerprints/Raftaar/NO CHINA.npy"
+    },
+    {
+        "id": "raftaar_raashah",
+        "artist": "Raftaar",
+        "title": "RAASHAH",
+        "fingerprint": "fingerprints/Raftaar/RAASHAH.npy"
+    },
+    {
+        "id": "raftaar_sheikh_chilli",
+        "artist": "Raftaar",
+        "title": "Sheikh Chilli",
+        "fingerprint": "fingerprints/Raftaar/Sheikh Chilli.npy"
+    },
+    {
+        "id": "raftaar_trap_praa",
+        "artist": "Raftaar",
+        "title": "TRAP PRAA",
+        "fingerprint": "fingerprints/Raftaar/TRAP PRAA.npy"
+    },
+    {
+        "id": "raga_gta_ncr",
+        "artist": "Raga",
+        "title": "GTA NCR",
+        "fingerprint": "fingerprints/Raga/GTA NCR.npy"
+    },
+    {
+        "id": "raga_rap_ka_mausam",
+        "artist": "Raga",
+        "title": "Rap Ka Mausam",
+        "fingerprint": "fingerprints/Raga/Rap Ka Mausam.npy"
+    },
+    {
+        "id": "rawal_bombay_sapphire",
+        "artist": "Rawal",
+        "title": "Bombay Sapphire",
+        "fingerprint": "fingerprints/Rawal/Bombay Sapphire.npy"
+    },
+    {
+        "id": "rawal_pew_pew!",
+        "artist": "Rawal",
+        "title": "PEW PEW!",
+        "fingerprint": "fingerprints/Rawal/PEW PEW!.npy"
+    },
+    {
+        "id": "ruth_b#_dandelions",
+        "artist": "Ruth B#",
+        "title": "Dandelions",
+        "fingerprint": "fingerprints/Ruth B#/Dandelions.npy"
+    },
+    {
+        "id": "sammad_kyu_kiya#",
+        "artist": "Sammad",
+        "title": "Kyu Kiya#",
+        "fingerprint": "fingerprints/Sammad/Kyu Kiya#.npy"
+    },
+    {
+        "id": "sangeetkir_sector_28",
+        "artist": "SangeetKir",
+        "title": "Sector 28",
+        "fingerprint": "fingerprints/SangeetKir/Sector 28.npy"
+    },
+    {
+        "id": "seafret_atlantis",
+        "artist": "Seafret",
+        "title": "Atlantis",
+        "fingerprint": "fingerprints/Seafret/Atlantis.npy"
+    },
+    {
+        "id": "sean_kingston_beautiful_girls",
+        "artist": "Sean Kingston",
+        "title": "Beautiful Girls",
+        "fingerprint": "fingerprints/Sean Kingston/Beautiful Girls.npy"
+    },
+    {
+        "id": "sean_kingston_eenie_meenie",
+        "artist": "Sean Kingston",
+        "title": "Eenie Meenie",
+        "fingerprint": "fingerprints/Sean Kingston/Eenie Meenie.npy"
+    },
+    {
+        "id": "sean_paul_no_lie",
+        "artist": "Sean Paul",
+        "title": "No Lie",
+        "fingerprint": "fingerprints/Sean Paul/No Lie.npy"
+    },
+    {
+        "id": "seedhe_maut_101",
+        "artist": "Seedhe Maut",
+        "title": "101",
+        "fingerprint": "fingerprints/Seedhe Maut/101.npy"
+    },
+    {
+        "id": "seedhe_maut_11k",
+        "artist": "Seedhe Maut",
+        "title": "11K",
+        "fingerprint": "fingerprints/Seedhe Maut/11K.npy"
+    },
+    {
+        "id": "seedhe_maut_akatsuki",
+        "artist": "Seedhe Maut",
+        "title": "Akatsuki",
+        "fingerprint": "fingerprints/Seedhe Maut/Akatsuki.npy"
+    },
+    {
+        "id": "seedhe_maut_asal_g",
+        "artist": "Seedhe Maut",
+        "title": "Asal G",
+        "fingerprint": "fingerprints/Seedhe Maut/Asal G.npy"
+    },
+    {
+        "id": "seedhe_maut_batti",
+        "artist": "Seedhe Maut",
+        "title": "Batti",
+        "fingerprint": "fingerprints/Seedhe Maut/Batti.npy"
+    },
+    {
+        "id": "seedhe_maut_brand_new",
+        "artist": "Seedhe Maut",
+        "title": "Brand New",
+        "fingerprint": "fingerprints/Seedhe Maut/Brand New.npy"
+    },
+    {
+        "id": "seedhe_maut_hausla",
+        "artist": "Seedhe Maut",
+        "title": "Hausla",
+        "fingerprint": "fingerprints/Seedhe Maut/Hausla.npy"
+    },
+    {
+        "id": "seedhe_maut_joint_in_the_booth",
+        "artist": "Seedhe Maut",
+        "title": "Joint in the Booth",
+        "fingerprint": "fingerprints/Seedhe Maut/Joint in the Booth.npy"
+    },
+    {
+        "id": "seedhe_maut_khatta_flow",
+        "artist": "Seedhe Maut",
+        "title": "Khatta Flow",
+        "fingerprint": "fingerprints/Seedhe Maut/Khatta Flow.npy"
+    },
+    {
+        "id": "seedhe_maut_khauf",
+        "artist": "Seedhe Maut",
+        "title": "Khauf",
+        "fingerprint": "fingerprints/Seedhe Maut/Khauf.npy"
+    },
+    {
+        "id": "seedhe_maut_kya_challa",
+        "artist": "Seedhe Maut",
+        "title": "Kya Challa",
+        "fingerprint": "fingerprints/Seedhe Maut/Kya Challa.npy"
+    },
+    {
+        "id": "seedhe_maut_luka_chippi",
+        "artist": "Seedhe Maut",
+        "title": "Luka Chippi",
+        "fingerprint": "fingerprints/Seedhe Maut/Luka Chippi.npy"
+    },
+    {
+        "id": "seedhe_maut_namastute",
+        "artist": "Seedhe Maut",
+        "title": "Namastute",
+        "fingerprint": "fingerprints/Seedhe Maut/Namastute.npy"
+    },
+    {
+        "id": "seedhe_maut_nanchaku",
+        "artist": "Seedhe Maut",
+        "title": "Nanchaku",
+        "fingerprint": "fingerprints/Seedhe Maut/Nanchaku.npy"
+    },
+    {
+        "id": "seedhe_maut_nawazuddin",
+        "artist": "Seedhe Maut",
+        "title": "Nawazuddin",
+        "fingerprint": "fingerprints/Seedhe Maut/Nawazuddin.npy"
+    },
+    {
+        "id": "seedhe_maut_pushpak_vimaan",
+        "artist": "Seedhe Maut",
+        "title": "Pushpak Vimaan",
+        "fingerprint": "fingerprints/Seedhe Maut/Pushpak Vimaan.npy"
+    },
+    {
+        "id": "seedhe_maut_swah!",
+        "artist": "Seedhe Maut",
+        "title": "Swah!",
+        "fingerprint": "fingerprints/Seedhe Maut/Swah!.npy"
+    },
+    {
+        "id": "seedhe_maut_taakat",
+        "artist": "Seedhe Maut",
+        "title": "Taakat",
+        "fingerprint": "fingerprints/Seedhe Maut/Taakat.npy"
+    },
+    {
+        "id": "seedhe_maut_w",
+        "artist": "Seedhe Maut",
+        "title": "W",
+        "fingerprint": "fingerprints/Seedhe Maut/W.npy"
+    },
+    {
+        "id": "seedhe_maut_नalla_freestyle",
+        "artist": "Seedhe Maut",
+        "title": "नalla Freestyle",
+        "fingerprint": "fingerprints/Seedhe Maut/नalla Freestyle.npy"
+    },
+    {
+        "id": "selena_gomez_and_the_scene_who_says",
+        "artist": "Selena Gomez & The Scene",
+        "title": "Who Says",
+        "fingerprint": "fingerprints/Selena Gomez & The Scene/Who Says.npy"
+    },
+    {
+        "id": "shady_moon_cherry_blossoms",
+        "artist": "Shady Moon",
+        "title": "Cherry Blossoms",
+        "fingerprint": "fingerprints/Shady Moon/Cherry Blossoms.npy"
+    },
+    {
+        "id": "shauharty_nukkadnatak_1#_1",
+        "artist": "shauharty",
+        "title": "NUKKADNATAK 1# 1",
+        "fingerprint": "fingerprints/shauharty/NUKKADNATAK 1# 1.npy"
+    },
+    {
+        "id": "shawn_mendes_señorita",
+        "artist": "Shawn Mendes",
+        "title": "Señorita",
+        "fingerprint": "fingerprints/Shawn Mendes/Señorita.npy"
+    },
+    {
+        "id": "shawn_mendes_stitches",
+        "artist": "Shawn Mendes",
+        "title": "Stitches",
+        "fingerprint": "fingerprints/Shawn Mendes/Stitches.npy"
+    },
+    {
+        "id": "shawn_mendes_there's_nothing_holdin'_me_back",
+        "artist": "Shawn Mendes",
+        "title": "There's Nothing Holdin' Me Back",
+        "fingerprint": "fingerprints/Shawn Mendes/There's Nothing Holdin' Me Back.npy"
+    },
+    {
+        "id": "shawn_mendes_treat_you_better",
+        "artist": "Shawn Mendes",
+        "title": "Treat You Better",
+        "fingerprint": "fingerprints/Shawn Mendes/Treat You Better.npy"
+    },
+    {
+        "id": "shawn_mendes_wonder",
+        "artist": "Shawn Mendes",
+        "title": "Wonder",
+        "fingerprint": "fingerprints/Shawn Mendes/Wonder.npy"
+    },
+    {
+        "id": "ski_mask_the_slump_god_faucet_failure",
+        "artist": "Ski Mask The Slump God",
+        "title": "Faucet Failure",
+        "fingerprint": "fingerprints/Ski Mask The Slump God/Faucet Failure.npy"
+    },
+    {
+        "id": "sleepy_hallow_low_key_bonus",
+        "artist": "Sleepy Hallow",
+        "title": "Low Key (Bonus)",
+        "fingerprint": "fingerprints/Sleepy Hallow/Low Key (Bonus).npy"
+    },
+    {
+        "id": "stephen_sanchez_until_i_found_you_with_em_beihold___em_beihold_version",
+        "artist": "Stephen Sanchez",
+        "title": "Until I Found You (with Em Beihold) - Em Beihold Version",
+        "fingerprint": "fingerprints/Stephen Sanchez/Until I Found You (with Em Beihold) - Em Beihold Version.npy"
+    },
+    {
+        "id": "stephen_sanchez_until_i_found_you",
+        "artist": "Stephen Sanchez",
+        "title": "Until I Found You",
+        "fingerprint": "fingerprints/Stephen Sanchez/Until I Found You.npy"
+    },
+    {
+        "id": "tai_verdes_last_day_on_earth",
+        "artist": "Tai Verdes",
+        "title": "last day on earth",
+        "fingerprint": "fingerprints/Tai Verdes/last day on earth.npy"
+    },
+    {
+        "id": "tai_verdes_sheluvme",
+        "artist": "Tai Verdes",
+        "title": "sheluvme",
+        "fingerprint": "fingerprints/Tai Verdes/sheluvme.npy"
+    },
+    {
+        "id": "tai_verdes_two_sugars",
+        "artist": "Tai Verdes",
+        "title": "TWO SUGARS",
+        "fingerprint": "fingerprints/Tai Verdes/TWO SUGARS.npy"
+    },
+    {
+        "id": "talha_anjum_100_bars",
+        "artist": "Talha Anjum",
+        "title": "100 Bars",
+        "fingerprint": "fingerprints/Talha Anjum/100 Bars.npy"
+    },
+    {
+        "id": "teqkoi_i'm_not_enough_and_i'm_sorry",
+        "artist": "Teqkoi",
+        "title": "I'm Not Enough and I'm Sorry",
+        "fingerprint": "fingerprints/Teqkoi/I'm Not Enough and I'm Sorry.npy"
+    },
+    {
+        "id": "the_chainsmokers_closer",
+        "artist": "The Chainsmokers",
+        "title": "Closer",
+        "fingerprint": "fingerprints/The Chainsmokers/Closer.npy"
+    },
+    {
+        "id": "the_chainsmokers_don't_let_me_down",
+        "artist": "The Chainsmokers",
+        "title": "Don't Let Me Down",
+        "fingerprint": "fingerprints/The Chainsmokers/Don't Let Me Down.npy"
+    },
+    {
+        "id": "the_chainsmokers_something_just_like_this",
+        "artist": "The Chainsmokers",
+        "title": "Something Just Like This",
+        "fingerprint": "fingerprints/The Chainsmokers/Something Just Like This.npy"
+    },
+    {
+        "id": "the_kid_laroi_fade_away",
+        "artist": "The Kid LAROI",
+        "title": "Fade Away",
+        "fingerprint": "fingerprints/The Kid LAROI/Fade Away.npy"
+    },
+    {
+        "id": "the_kid_laroi_go_feat_juice_wrld",
+        "artist": "The Kid LAROI",
+        "title": "GO (feat. Juice WRLD)",
+        "fingerprint": "fingerprints/The Kid LAROI/GO (feat. Juice WRLD).npy"
+    },
+    {
+        "id": "the_scotts_the_scotts",
+        "artist": "THE SCOTTS",
+        "title": "THE SCOTTS",
+        "fingerprint": "fingerprints/THE SCOTTS/THE SCOTTS.npy"
+    },
+    {
+        "id": "the_vamps_somebody_to_you",
+        "artist": "The Vamps",
+        "title": "Somebody To You",
+        "fingerprint": "fingerprints/The Vamps/Somebody To You.npy"
+    },
+    {
+        "id": "the_weeknd_blinding_lights",
+        "artist": "The Weeknd",
+        "title": "Blinding Lights",
+        "fingerprint": "fingerprints/The Weeknd/Blinding Lights.npy"
+    },
+    {
+        "id": "the_weeknd_die_for_you___remix",
+        "artist": "The Weeknd",
+        "title": "Die For You - Remix",
+        "fingerprint": "fingerprints/The Weeknd/Die For You - Remix.npy"
+    },
+    {
+        "id": "the_weeknd_starboy",
+        "artist": "The Weeknd",
+        "title": "Starboy",
+        "fingerprint": "fingerprints/The Weeknd/Starboy.npy"
+    },
+    {
+        "id": "travis_scott_5%_tint",
+        "artist": "Travis Scott",
+        "title": "5% TINT",
+        "fingerprint": "fingerprints/Travis Scott/5% TINT.npy"
+    },
+    {
+        "id": "travis_scott_butterfly_effect",
+        "artist": "Travis Scott",
+        "title": "BUTTERFLY EFFECT",
+        "fingerprint": "fingerprints/Travis Scott/BUTTERFLY EFFECT.npy"
+    },
+    {
+        "id": "travis_scott_highest_in_the_room",
+        "artist": "Travis Scott",
+        "title": "HIGHEST IN THE ROOM",
+        "fingerprint": "fingerprints/Travis Scott/HIGHEST IN THE ROOM.npy"
+    },
+    {
+        "id": "travis_scott_sicko_mode",
+        "artist": "Travis Scott",
+        "title": "SICKO MODE",
+        "fingerprint": "fingerprints/Travis Scott/SICKO MODE.npy"
+    },
+    {
+        "id": "trevor_daniel_falling",
+        "artist": "Trevor Daniel",
+        "title": "Falling",
+        "fingerprint": "fingerprints/Trevor Daniel/Falling.npy"
+    },
+    {
+        "id": "trippie_redd_miss_the_rage",
+        "artist": "Trippie Redd",
+        "title": "Miss The Rage",
+        "fingerprint": "fingerprints/Trippie Redd/Miss The Rage.npy"
+    },
+    {
+        "id": "vaibhav_kotm",
+        "artist": "VAIBHAV",
+        "title": "KOTM",
+        "fingerprint": "fingerprints/VAIBHAV/KOTM.npy"
+    },
+    {
+        "id": "vance_joy_riptide",
+        "artist": "Vance Joy",
+        "title": "Riptide",
+        "fingerprint": "fingerprints/Vance Joy/Riptide.npy"
+    },
+    {
+        "id": "vasudev_ghaziabad",
+        "artist": "Vasudev",
+        "title": "Ghaziabad",
+        "fingerprint": "fingerprints/Vasudev/Ghaziabad.npy"
+    },
+    {
+        "id": "wiz_khalifa_see_you_again_feat_charlie_puth",
+        "artist": "Wiz Khalifa",
+        "title": "See You Again (feat. Charlie Puth)",
+        "fingerprint": "fingerprints/Wiz Khalifa/See You Again (feat. Charlie Puth).npy"
+    },
+    {
+        "id": "wolfcryman_ik_kudi",
+        "artist": "wolf.cryman",
+        "title": "Ik Kudi",
+        "fingerprint": "fingerprints/wolf.cryman/Ik Kudi.npy"
+    },
+    {
+        "id": "xxxtentacion_changes",
+        "artist": "XXXTENTACION",
+        "title": "changes",
+        "fingerprint": "fingerprints/XXXTENTACION/changes.npy"
+    },
+    {
+        "id": "xxxtentacion_jocelyn_flores",
+        "artist": "XXXTENTACION",
+        "title": "Jocelyn Flores",
+        "fingerprint": "fingerprints/XXXTENTACION/Jocelyn Flores.npy"
+    },
+    {
+        "id": "xxxtentacion_moonlight",
+        "artist": "XXXTENTACION",
+        "title": "Moonlight",
+        "fingerprint": "fingerprints/XXXTENTACION/Moonlight.npy"
+    },
+    {
+        "id": "xxxtentacion_sad!",
+        "artist": "XXXTENTACION",
+        "title": "SAD!",
+        "fingerprint": "fingerprints/XXXTENTACION/SAD!.npy"
+    },
+    {
+        "id": "ynw_melly_murder_on_my_mind",
+        "artist": "YNW Melly",
+        "title": "Murder on My Mind",
+        "fingerprint": "fingerprints/YNW Melly/Murder on My Mind.npy"
+    },
+    {
+        "id": "zach_diamond_isolation",
+        "artist": "Zach Diamond",
+        "title": "Isolation",
+        "fingerprint": "fingerprints/Zach Diamond/Isolation.npy"
+    }
+]

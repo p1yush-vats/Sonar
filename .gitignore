@@ -1,0 +1,43 @@
+# ==========================
+# SONAR Project Gitignore
+# ==========================
+
+# --- Python ---
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.log
+*.sqlite3
+*.egg-info/
+.env
+venv/
+.cache/
+
+# --- Build Artifacts ---
+tmp_uploads/
+constellation_index/
+dataset/
+metadata/*.npy
+src/server/constellation_cache.pkl*
+src/server/fingerprint_cache.pkl*
+
+# --- Node / React ---
+frontend/node_modules/
+frontend/build/
+frontend/dist/
+frontend/.DS_Store
+frontend/.env.local
+
+# --- OS / Misc ---
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# --- Audio files ---
+*.wav
+*.mp3
+*.flac
+query/
+test_clip.wav

@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Radio } from "lucide-react";
 import "./styles.css";
-
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || "http://localhost:8000";
 export default function RecognizerUI() {
   const [state, setState] = useState("idle"); // idle, listening, processing, matched
   const [audioData, setAudioData] = useState([]);
@@ -121,7 +121,7 @@ export default function RecognizerUI() {
       const form = new FormData();
       form.append("audio", blob, "clip.webm");
 
-      const res = await fetch("http://localhost:8000/recognize", {
+      const res = await fetch(`${BACKEND_URL}/recognize`, {
         method: "POST",
         body: form,
       });

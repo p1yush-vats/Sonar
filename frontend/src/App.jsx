@@ -141,7 +141,10 @@ const ScanTab = ({ result, setResult, history, setHistory }) => {
   const raf = useRef(null);
   const timer = useRef(null);
 
-  const BACKEND = "http://localhost:8000";
+  const BACKEND = import.meta.env.VITE_BACKEND_URL || "http://localhost:8000";
+
+
+
 
   const start = async () => {
     try {

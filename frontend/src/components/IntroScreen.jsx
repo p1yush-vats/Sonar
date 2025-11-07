@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Waves } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || "http://localhost:8000";
+
+
 
 export default function IntroScreen({ onFinish }) {
   const [statusText, setStatusText] = useState("Initializing SONAR core...");
@@ -55,7 +58,7 @@ export default function IntroScreen({ onFinish }) {
     let poll;
     const checkBackend = async () => {
       try {
-        const res = await fetch("http://localhost:8000/ping");
+        const res = await fetch(`${BACKEND_URL}/ping`);
         const data = await res.json();
         if (data.status === "ready") {
           setStatusText(

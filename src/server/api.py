@@ -29,7 +29,9 @@ from src.recognize_constellation import (
 # CONFIG
 # ------------------------------
 INDEX_DIR = "constellation_index"
-CACHE_FILE = "src/server/constellation_cache.pkl.gz"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+CACHE_FILE = os.path.join(BASE_DIR, "constellation_cache.pkl.gz")
+
 USE_SPOTIFY_META = True  # Fetch album/cover/popularity
 SERVER_READY = False
 

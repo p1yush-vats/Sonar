@@ -1,33 +1,47 @@
+# ==============================
+# SONAR API v1.1 — Stable Release
+# ==============================
 import sys, os, json, gzip, pickle, base64, requests
 import numpy as np
 from collections import defaultdict, Counter
 import torch, torchaudio
 from datetime import datetime, timedelta
 from dotenv import load_dotenv
-# Add project root
+from fastapi import FastAPI, UploadFile, File
+from fastapi.middleware.cors import CORSMiddleware
+import shutil, uuid, subprocess
+
+# ------------------------------
+# Load environment + Spotify keys
+# ------------------------------
 sys.path.append(os.path.abspath("."))
+load_dotenv()
+
+SPOTIFY_CLIENT_ID = os.getenv("SPOTIFY_CLIENT_ID")
+SPOTIFY_CLIENT_SECRET = os.getenv("SPOTIFY_CLIENT_SECRET")
 
 from src.recognize_constellation import (
     HOP, SR, MIN_MATCHES,
     spectrogram_db_from_tensor, peak_coords, hashes_from_peaks
 )
-load_dotenv()
 
-SPOTIFY_CLIENT_ID = os.getenv("SPOTIFY_CLIENT_ID")
-SPOTIFY_CLIENT_SECRET = os.getenv("SPOTIFY_CLIENT_SECRET")
-# ====================== CONFIG ======================
+# ------------------------------
+# CONFIG
+# ------------------------------
 INDEX_DIR = "constellation_index"
-CACHE_FILE = "src/server/constellation_cache.pkl.gz"   # gz for deployment
-USE_SPOTIFY_META = True
-
+CACHE_FILE = "src/server/constellation_cache.pkl.gz"
+USE_SPOTIFY_META = True  # Fetch album/cover/popularity
+SERVER_READY = False
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 print(f"🚀 Using device: {device}", flush=True)
 
+
 # =====================================================
-# FAST INDEX LOADER (gzip-aware)
+# LOAD FINGERPRINT CACHE (GZIP AWARE)
 # =====================================================
 def load_index_fast():
+    """Loads fingerprint cache from .pkl or .gz file."""
     if not os.path.exists(CACHE_FILE):
         raise FileNotFoundError(f"❌ Cache file not found: {CACHE_FILE}")
 
@@ -45,23 +59,36 @@ def load_index_fast():
     return inv, meta_by_id
 
 
+# =====================================================
+# LOAD CACHE ON SERVER START
+# =====================================================
 print("🔧 Loading fingerprint DB into memory...")
-inv, meta_by_id = load_index_fast()
-print("✅ Index ready\n")
+try:
+    inv, meta_by_id = load_index_fast()
+    SERVER_READY = True
+    print("✅ Index ready\n")
+except Exception as e:
+    print(f"❌ Failed to load cache: {e}")
+    inv, meta_by_id = {}, {}
+    SERVER_READY = False
 
 
 # =====================================================
-# SPOTIFY TOKEN CACHE
+# SPOTIFY TOKEN HANDLER
 # =====================================================
 _spotify_token = None
 _token_expiry = None
 
 def get_spotify_token():
-    """Get and cache a Spotify app-only token for 1 hour."""
+    """Fetch and cache Spotify token."""
     global _spotify_token, _token_expiry
 
     if _spotify_token and _token_expiry and datetime.utcnow() < _token_expiry:
-        return _spotify_token  # still valid
+        return _spotify_token
+
+    if not SPOTIFY_CLIENT_ID or not SPOTIFY_CLIENT_SECRET:
+        print("⚠️ Missing Spotify credentials.")
+        return None
 
     auth_str = f"{SPOTIFY_CLIENT_ID}:{SPOTIFY_CLIENT_SECRET}"
     b64_auth = base64.b64encode(auth_str.encode()).decode()
@@ -73,20 +100,21 @@ def get_spotify_token():
     token_data = res.json()
     _spotify_token = token_data["access_token"]
     _token_expiry = datetime.utcnow() + timedelta(seconds=token_data.get("expires_in", 3600))
-    print("🔑 New Spotify token fetched.")
+    print("🔑 Spotify token refreshed.")
     return _spotify_token
 
 
 # =====================================================
-# SMART SPOTIFY METADATA FETCHER
+# FETCH SONG METADATA FROM SPOTIFY
 # =====================================================
 def get_spotify_metadata(artist, title):
-    """Fetch accurate metadata (album, cover, preview, popularity) via Spotify API."""
+    """Fetch album, cover art, preview, popularity."""
     try:
         token = get_spotify_token()
-        headers = {"Authorization": f"Bearer {token}"}
+        if not token:
+            return None
 
-        # Clean and prepare query
+        headers = {"Authorization": f"Bearer {token}"}
         clean_title = title.replace(".wav", "").replace(".mp3", "").strip()
         query = f"track:{clean_title} artist:{artist}"
 
@@ -98,17 +126,17 @@ def get_spotify_metadata(artist, title):
 
         tracks = res.get("tracks", {}).get("items", [])
         if not tracks:
-            print(f"⚠️ No Spotify match found for: {artist} - {clean_title}")
+            print(f"⚠️ No Spotify match for: {artist} - {clean_title}")
             return None
 
-        # Try best match: exact title and artist match
+        # Best match = matching artist + title
         best_track = None
         for t in tracks:
-            title_match = clean_title.lower() in t["name"].lower()
-            artist_match = any(artist.lower() in a["name"].lower() for a in t["artists"])
-            if title_match and artist_match:
+            if clean_title.lower() in t["name"].lower() and \
+               any(artist.lower() in a["name"].lower() for a in t["artists"]):
                 best_track = t
                 break
+
         if not best_track:
             best_track = tracks[0]
 
@@ -121,16 +149,16 @@ def get_spotify_metadata(artist, title):
             "spotify_url": best_track["external_urls"]["spotify"],
             "popularity": best_track.get("popularity", 0),
         }
-
     except Exception as e:
         print(f"⚠️ Spotify metadata fetch failed: {e}")
         return None
 
 
 # =====================================================
-# MATCHING ENGINE
+# SONG RECOGNITION ENGINE
 # =====================================================
 def recognize_file(path):
+    """Identify song from an audio file."""
     wav, sr = torchaudio.load(path)
     S_db = spectrogram_db_from_tensor(wav, sr)
     peaks = peak_coords(S_db)
@@ -162,11 +190,8 @@ def recognize_file(path):
 
     info = meta_by_id[int(best_sid)]
     confidence = best_align / max(1, best_total)
-
-    # Clean up title (remove .wav/.mp3)
     info["title"] = info["title"].replace(".wav", "").replace(".mp3", "").strip()
 
-    # Add Spotify metadata
     if USE_SPOTIFY_META:
         meta = get_spotify_metadata(info["artist"], info["title"])
         if meta:
@@ -176,13 +201,9 @@ def recognize_file(path):
 
 
 # =====================================================
-# FASTAPI APP
+# FASTAPI SETUP
 # =====================================================
-from fastapi import FastAPI, UploadFile, File
-from fastapi.middleware.cors import CORSMiddleware
-import shutil, uuid, subprocess
-
-app = FastAPI()
+app = FastAPI(title="SONAR Recognition API", version="1.1")
 
 app.add_middleware(
     CORSMiddleware,
@@ -209,9 +230,33 @@ def convert_to_wav(src_path, dst_path):
         return False
 
 
+# =====================================================
+# ROUTES
+# =====================================================
+
+@app.get("/ping")
+async def ping():
+    """Used by frontend intro screen to wait until backend is ready."""
+    if not SERVER_READY:
+        return {
+            "status": "booting",
+            "message": "Loading fingerprints into memory..."
+        }
+    return {
+        "status": "ready",
+        "songs_loaded": len(meta_by_id),
+        "hash_buckets": len(inv),
+        "device": str(device),
+        "timestamp": datetime.utcnow().isoformat()
+    }
+
+
 @app.post("/recognize")
 async def recognize(audio: UploadFile = File(...)):
-    """Handle uploaded clip and return recognition + Spotify metadata."""
+    """Receive audio, identify song, and return metadata."""
+    if not SERVER_READY:
+        return {"success": False, "message": "Server still booting"}
+
     ext = audio.filename.split(".")[-1]
     temp_raw = os.path.join(UPLOAD_DIR, f"{uuid.uuid4()}.{ext}")
     temp_wav = os.path.join(UPLOAD_DIR, f"{uuid.uuid4()}.wav")
